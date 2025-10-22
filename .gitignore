@@ -16,9 +16,12 @@ config/config.yaml
 Thumbs.db
 
 # Data outputs and intermediates
-data/input/
-data/output/
-data/intermediate/
+# data/input/
+# data/output/
+# data/intermediate/
+# Ignore all CSV and XLSX files recursively
+*.csv
+*.xlsx
 
 # Logs
 *.log

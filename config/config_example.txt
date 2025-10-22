@@ -1,0 +1,30 @@
+# Rename this file as config.yaml and place it in config folder
+# Sample Input data
+
+Multi_CCR_BOM_Active:
+  bom_active: True
+  ccr_type: "multi"
+  required_files:
+    - Master_Item
+    - Master_CCR
+    - Item_Master_Plant
+    - Map_CCR_ItemType
+    - OrderData
+    - Batchwise_OrderAllocation
+    - Batchwise_ComponentAllocation
+    - Sequenced_Orders
+    - FOL_Data
+    - Master_Plant
+
+# NOTE -
+The compulsory columns for to be present in below input files from Database (Developer's Output)
+1. Master_Item - item_code, item_type_id
+2. Master_CCR - ccr_id, ccr_code, ccr_name, capacity_per_day, working_hours_per_day, schedule_horizon, fol_horizon, residual_buffer, ccr_group_id, dept_id, plant_id
+3. Item_Master_Plant - org_code, org_name, item_number, procurement_buffer, production_buffer
+4. Map_CCR_ItemType - touch_time_in_mins, ccr_id, item_type_id
+5. OrderData - order_id, prending_ccr_qty, item_id, plant_id
+6. Batchwise_OrderAllocation - order_id, item_code, plant_code, order_remaining
+7. Batchwise_ComponentAllocation - order_id, item_code, plant_code, parent_code, order_remaining
+8. Sequenced_Orders - order_id, item_id, cr_duedate, seq, plant_id
+9. FOL_Data - ccr_id, fol_in_days
+10. Master_Plant - plant_id, plant_code, plant_name, is_valid

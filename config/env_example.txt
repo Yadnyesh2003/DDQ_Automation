@@ -1,0 +1,9 @@
+# Rename this file as .env and place it inside config folder.
+
+CLIENT_NAME = # Same as client name in client_config.yaml
+CONFIG_ENV = # Multi_CCR_BOM_Active - Same as config.yaml
+DATA_PATH = # path_to_the_folder\data\input
+INTERMEDIATE_PATH = # path_to_the_folder\data\intermediate
+OUTPUT_PATH = # path_to_the_folder\data\output
+TODAY = # Input Date to be in this format - dd-mm-yyyy
+# TODAY = 

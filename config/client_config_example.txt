@@ -1,0 +1,11 @@
+# Rename this file as client_config.yaml and place it in config folder
+# As per current code implementation this configuration is not in use and code has been commented out. 
+# This config will be used for client specific sequencing of orders and further if client specific logic is to be implemented and remove dependency on Database files (Developer's Output)
+
+ISMT:
+  sequencing_script: "client_a_sequencer.py"
+  custom_input: "ClientA_CustomInput.csv"
+
+Client_B:
+  sequencing_script: "client_b_sequencer.py"
+  custom_input: "ClientB_CustomInput.csv"

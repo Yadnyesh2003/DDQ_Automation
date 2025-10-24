@@ -10,7 +10,12 @@ def calculate_with_bom( df_orderload: pd.DataFrame, df_item_ccr_touchtime_mappin
         on=["order_id", "item_code", "plant_code"],
         how="left"
     )
-    df_merged["orderload_on_ccr_due_to_fg"] = df_merged["order_remaining"] / df_merged["touch_time_in_mins"]
+    df_merged["orderload_on_ccr_due_to_fg"] = 0.0
+    # df_merged["orderload_on_ccr_due_to_fg"] = df_merged["order_remaining"] / df_merged["touch_time_in_mins"]
+    mask = df_merged["touch_time_in_mins"].notna() & (df_merged["touch_time_in_mins"] != 0)
+    df_merged.loc[mask, "orderload_on_ccr_due_to_fg"] = (
+        df_merged.loc[mask, "order_remaining"] / df_merged.loc[mask, "touch_time_in_mins"]
+    )
     # df_merged = df_merged.drop(columns=["order_remaining"])
     df_orderload = df_merged
     # SFG load calculation

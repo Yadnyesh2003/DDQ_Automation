@@ -15,6 +15,7 @@ Multi_CCR_BOM_Active:
     - Sequenced_Orders
     - FOL_Data
     - Master_Plant
+    - Route_Details
 
 # NOTE -
 The compulsory columns for to be present in below input files from Database (Developer's Output)
@@ -28,3 +29,4 @@ The compulsory columns for to be present in below input files from Database (Dev
 8. Sequenced_Orders - order_id, item_id, cr_duedate, seq, plant_id
 9. FOL_Data - ccr_id, fol_in_days
 10. Master_Plant - plant_id, plant_code, plant_name, is_valid
+11. Route_Details - Same table as in DB

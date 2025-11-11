@@ -80,8 +80,8 @@ def calculate(cleaned_dfs: dict, df_sequenced: pd.DataFrame, config: dict, env: 
 
     df_orderload = pd.merge(
         df_orderload,
-        df_map_ccr_itemtype[['item_type_id', 'touch_time_in_mins']],
-        on='item_type_id',
+        df_map_ccr_itemtype[['item_type_id', 'ccr_id', 'touch_time_in_mins']],
+        on=['item_type_id', 'ccr_id'],
         how='left'
     )
     export_dataframe(df_orderload, env["INTERMEDIATE_PATH"], "df_orderload_with_touch_time.csv")
@@ -100,6 +100,7 @@ def calculate(cleaned_dfs: dict, df_sequenced: pd.DataFrame, config: dict, env: 
     # export_dataframe(df_orderload, env["INTERMEDIATE_PATH"], "df_orderload_with_Null_itemcodes.csv")
     # df_orderload_invalid = df_orderload[df_orderload["item_code"].isnull()]
     # export_dataframe(df_orderload_invalid, env["OUTPUT_PATH"], "df_orderload_invalid.csv")
+
 
     df_orderload = df_orderload.merge(
         df_master_plant[["plant_id", "plant_code", "plant_name"]],

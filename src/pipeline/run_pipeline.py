@@ -29,8 +29,9 @@ def run_pipeline():
 
     # Step 4: Calculate FOL + Due Dates
     df_fol_data = fol_calculator.calculate(df_orderload, cleaned_dfs)
-    df_fol_duedate = fol_calculator.calculate_due_date(df_fol_data, cleaned_dfs, env)
     export_dataframe(df_fol_data, env["INTERMEDIATE_PATH"], "df_fol_data.csv")
+    df_fol_duedate = fol_calculator.calculate_due_date(df_fol_data, cleaned_dfs, env)
+    
     export_dataframe(df_fol_duedate, env["INTERMEDIATE_PATH"], "df_fol_duedate.csv")
 
     # Step 5: Calculate Buffer Due Date
